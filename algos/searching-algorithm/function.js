@@ -29,7 +29,7 @@ var heightScale = d3
 createChart(data);
 
 const SearchAlgo = {
-  liearSearch() {
+  linearSearch() {
     // promise for async bubble sort with delay
 
     const timer = (ms) => new Promise((res) => setTimeout(res, ms));
@@ -116,15 +116,12 @@ const SearchAlgo = {
 function startSearching() {
   let algo = document.getElementById("get-algo").value;
   if (algo == "linear-search") {
-    const linearSearchStarted = SearchAlgo.liearSearch.bind(SearchAlgo);
+    const linearSearchStarted = SearchAlgo.linearSearch.bind(SearchAlgo);
     linearSearchStarted();
   } else if (algo == "binary-search") {
     const binarySearchStarted = SearchAlgo.binarySearch.bind(SearchAlgo);
     binarySearchStarted();
-  } else if (algo == "merge-sort") {
-    const mergeSortStarted = SortAlgo.mergeSort.bind(SortAlgo);
-    mergeSortStarted();
-  }
+  } 
 }
 
 document.getElementById("search").addEventListener("click", function () {
